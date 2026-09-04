@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - Match Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 15px;
+            padding-bottom: 70px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            color: #ffb703;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .header h2 {
+            color: #ffb703;
+            font-size: 18px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .match-title {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .match-sub {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background-color: #2a2a2a;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .info-item span {
+            display: block;
+            font-size: 11px;
+            color: #aaa;
+        }
+        .info-item strong {
+            font-size: 15px;
+            color: #ffb703;
+        }
+        .rules-title {
+            font-size: 14px;
+            color: #ffb703;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .rules-list {
+            padding-left: 20px;
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .join-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffb703;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .join-btn:active {
+            background-color: #e0a000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- टॉप हेडर विथ बैक बटन -->
+    <div class="header">
+        <a href="index.html" class="back-btn">⬅</a>
+        <h2>MATCH DETAILS</h2>
+    </div>
+
+    <!-- मैच समरी -->
+    <div class="card">
+        <div class="match-title">SOLO BERMUDA BATTLE</div>
+        <div class="match-sub">⏰ आज रात 08:00 बजे | 🗺️ मैप: BERMUDA</div>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <span>प्राइज पूल</span>
+                <strong>₹500</strong>
+            </div>
+            <div class="info-item">
+                <span>पर किल</span>
+                <strong>₹5</strong>
+            </div>
+            <div class="info-item">
+                <span>एंट्री फीस</span>
+                <strong>₹20</strong>
+            </div>
+            <div class="info-item">
+                <span>टाइप</span>
+                <strong>SOLO</strong>
+            </div>
+        </div>
+
+        <button class="join-btn" onclick="confirmJoin()">जॉइन मैच (₹20)</button>
+    </div>
+
+    <!-- मैच के नियम -->
+    <div class="card">
+        <div class="rules-title">मैच के नियम (MATCH RULES)</div>
+        <ol class="rules-list">
+            <li>हैकर्स या एमुलेटर (PC) का उपयोग सख्त मना है।</li>
+            <li>मैच शुरू होने से 15 मिनट पहले रूम आईडी और पासवर्ड मिलेगा।</li>
+            <li>अपनी सही Free Fire UID से ही रूम में प्रवेश करें।</li>
+            <li>गलत नाम या UID होने पर किक (Kick) कर दिया जाएगा।</li>
+        </ol>
+    </div>
+
+    <script>
+        function confirmJoin() {
+            let balance = parseInt(localStorage.getItem("userBalance") || "0");
+            let entryFee = 20;
+
+            if (balance >= entryFee) {
+                // बैलेंस काटना और सेव करना
+                localStorage.setItem("userBalance", balance - entryFee);
+                alert("बधाई हो! आप सफलतापूर्वक मैच में शामिल हो गए हैं।");
+                window.location.href = "my-matches.html"; // स्टेप 5 से लिंक
+            } else {
+                alert("आपके पास पर्याप्त बैलेंस नहीं है! कृपया पहले पैसे जोड़ें।");
+                window.location.href = "wallet.html"; // स्टेप 7 (वॉलेट) से लिंक
+            }
+        }
+    </script>
+
+</body>
+</html>
+  
