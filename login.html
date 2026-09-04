@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #ffb703;
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.2);
+        }
+        .card h2 {
+            text-align: center;
+            color: #ffb703;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+        .input-group input:focus {
+            border-color: #ffb703;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffb703;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:active {
+            background-color: #e0a000;
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .footer-text a {
+            color: #ffb703;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>LOGIN</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="mobile">मोबाइल नंबर</label>
+                <input type="tel" id="mobile" placeholder="10 अंकों का नंबर दर्ज करें" required pattern="[0-9]{10}">
+            </div>
+            <div class="input-group">
+                <label for="password">पासवर्ड</label>
+                <input type="password" id="password" placeholder="अपना पासवर्ड डालें" required>
+            </div>
+            <button type="submit" class="btn">लॉगिन करें</button>
+        </form>
+        <div class="footer-text">
+            खाता नहीं है? <a href="register.html">रजिस्टर करें</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let mobile = document.getElementById('mobile').value;
+            let password = document.getElementById('password').value;
+
+            if (mobile.length === 10 && password.trim() !== "") {
+                localStorage.setItem("userMobile", mobile);
+                alert("लॉगिन सफल रहा!");
+                window.location.href = "index.html"; // स्टेप 3 (होम पेज) से कनेक्टेड
+            } else {
+                alert("कृपया सही जानकारी भरें!");
+            }
+        });
+    </script>
+
+</body>
+  </html>
+  
