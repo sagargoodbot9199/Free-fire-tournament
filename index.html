@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding-bottom: 70px; /* बॉटम नेविगेशन के लिए जगह */
+        }
+        /* टॉप हेडर */
+        .header {
+            background-color: #1e1e1e;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ffb703;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header h1 {
+            color: #ffb703;
+            font-size: 18px;
+        }
+        .wallet-btn {
+            background-color: #2a2a2a;
+            color: #ffb703;
+            border: 1px solid #ffb703;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /* मैच लिस्ट कंटेनर */
+        .container {
+            padding: 15px;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        /* मैच कार्ड */
+        .match-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .match-card h3 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .match-time {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+        .match-details {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .match-details div span {
+            display: block;
+            font-size: 10px;
+            color: #aaa;
+        }
+        .match-details div strong {
+            font-size: 14px;
+            color: #ffb703;
+        }
+        .join-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffb703;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .join-btn:active {
+            background-color: #e0a000;
+        }
+        /* बॉटम नेविगेशन बार */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #333;
+        }
+        .nav-item {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+        }
+        .nav-item.active {
+            color: #ffb703;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- टॉप हेडर -->
+    <div class="header">
+        <h1>FF TOURNAMENTS</h1>
+        <a href="wallet.html" class="wallet-btn">💰 ₹<span id="userBalance">0</span></a>
+    </div>
+
+    <!-- टूर्नामेंट लिस्ट -->
+    <div class="container">
+        <div class="section-title">उपलब्ध टूर्नामेंट्स (Upcoming Matches)</div>
+
+        <!-- मैच कार्ड 1 -->
+        <div class="match-card">
+            <h3>SOLO BERMUDA BATTLE</h3>
+            <div class="match-time">⏰ आज रात 08:00 बजे</div>
+            <div class="match-details">
+                <div>
+                    <span>प्राइज पूल</span>
+                    <strong>₹500</strong>
+                </div>
+                <div>
+                    <span>पर किल</span>
+                    <strong>₹5</strong>
+                </div>
+                <div>
+                    <span>एंट्री फीस</span>
+                    <strong>₹20</strong>
+                </div>
+            </div>
+            <!-- मैच डिटेल्स पेज से लिंक -->
+            <a href="match-details.html" class="join-btn">व्यू डिटेल्स & जॉइन</a>
+        </div>
+
+        <!-- मैच कार्ड 2 -->
+        <div class="match-card">
+            <h3>SQUAD CLASH WAR</h3>
+            <div class="match-time">⏰ आज रात 09:30 बजे</div>
+            <div class="match-details">
+                <div>
+                    <span>प्राइज पूल</span>
+                    <strong>₹1000</strong>
+                </div>
+                <div>
+                    <span>पर किल</span>
+                    <strong>₹10</strong>
+                </div>
+                <div>
+                    <span>एंट्री फीस</span>
+                    <strong>₹50</strong>
+                </div>
+            </div>
+            <!-- मैच डिटेल्स पेज से लिंक -->
+            <a href="match-details.html" class="join-btn">व्यू डिटेल्स & जॉइन</a>
+        </div>
+    </div>
+
+    <!-- बॉटम नेविगेशन बार (सभी पेजों के लिंक्स) -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item active">🏠 होम</a>
+        <a href="my-matches.html" class="nav-item">🎮 माय मैचेस</a>
+        <a href="wallet.html" class="nav-item">💰 वॉलेट</a>
+        <a href="profile.html" class="nav-item">👤 प्रोफाइल</a>
+    </div>
+
+    <script>
+        // स्टोरेज से बैलेंस दिखाना (डिफ़ॉल्ट 0)
+        let balance = localStorage.getItem("userBalance") || "0";
+        document.getElementById("userBalance").innerText = balance;
+    </script>
+
+</body>
+              </html>
+              
