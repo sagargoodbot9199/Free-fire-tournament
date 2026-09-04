@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - My Matches</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding-bottom: 70px;
+        }
+        /* हेडर */
+        .header {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #ffb703;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header h1 {
+            color: #ffb703;
+            font-size: 18px;
+        }
+        .container {
+            padding: 15px;
+        }
+        .section-title {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        /* कार्ड डिज़ाइन */
+        .match-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .match-card h3 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .match-time {
+            color: #ffb703;
+            font-size: 12px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .status-badge {
+            display: inline-block;
+            background-color: #2a2a2a;
+            color: #00ff66;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+        .room-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffb703;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .room-btn:active {
+            background-color: #e0a000;
+        }
+        /* बॉटम नेविगेशन */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #333;
+        }
+        .nav-item {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+        }
+        .nav-item.active {
+            color: #ffb703;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- हेडर -->
+    <div class="header">
+        <h1>MY MATCHES</h1>
+    </div>
+
+    <!-- जॉइन किए गए मैचेस की लिस्ट -->
+    <div class="container">
+        <div class="section-title">अपकमिंग मैचेस (Joined Matches)</div>
+
+        <div class="match-card">
+            <span class="status-badge">● JOINED SUCCESSFUL</span>
+            <h3>SOLO BERMUDA BATTLE</h3>
+            <div class="match-time">⏰ समय: आज रात 08:00 बजे</div>
+            
+            <!-- रूम डिटेल्स देखने के लिए स्टेप 6 (room-info.html) से लिंक -->
+            <a href="room-info.html" class="room-btn">VIEW ROOM ID & PASSWORD</a>
+        </div>
+    </div>
+
+    <!-- बॉटम नेविगेशन बार -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item">🏠 होम</a>
+        <a href="my-matches.html" class="nav-item active">🎮 माय मैचेस</a>
+        <a href="wallet.html" class="nav-item">💰 वॉलेट</a>
+        <a href="profile.html" class="nav-item">👤 प्रोफाइल</a>
+    </div>
+
+</body>
+</html>
