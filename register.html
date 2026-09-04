@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #ffb703;
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.2);
+        }
+        .card h2 {
+            text-align: center;
+            color: #ffb703;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .input-group {
+            margin-bottom: 12px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+        .input-group input:focus {
+            border-color: #ffb703;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffb703;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:active {
+            background-color: #e0a000;
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .footer-text a {
+            color: #ffb703;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>NEW ACCOUNT</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="username">पूरा नाम</label>
+                <input type="text" id="username" placeholder="अपना नाम लिखें" required>
+            </div>
+            <div class="input-group">
+                <label for="ffid">Free Fire UID</label>
+                <input type="number" id="ffid" placeholder="Free Fire UID दर्ज करें" required>
+            </div>
+            <div class="input-group">
+                <label for="regMobile">मोबाइल नंबर</label>
+                <input type="tel" id="regMobile" placeholder="10 अंकों का नंबर दर्ज करें" required pattern="[0-9]{10}">
+            </div>
+            <div class="input-group">
+                <label for="regPassword">पासवर्ड</label>
+                <input type="password" id="regPassword" placeholder="पासवर्ड बनाएं" required minlength="6">
+            </div>
+            <button type="submit" class="btn">अकाउंट बनाएं</button>
+        </form>
+        <div class="footer-text">
+            पहले से अकाउंट है? <a href="login.html">लॉगिन करें</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById('username').value;
+            let ffid = document.getElementById('ffid').value;
+            let mobile = document.getElementById('regMobile').value;
+
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userFFID", ffid);
+            localStorage.setItem("userMobile", mobile);
+
+            alert("अकाउंट सफलतापूर्वक बन गया! अब लॉगिन करें।");
+            window.location.href = "login.html"; // स्टेप 1 (लॉगिन पेज) से कनेक्टेड
+        });
+    </script>
+
+</body>
+  </html>
+  
