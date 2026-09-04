@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Tournament - Room Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            color: #ffb703;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .header h2 {
+            color: #ffb703;
+            font-size: 18px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #ffb703;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.1);
+        }
+        .match-name {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        .info-box {
+            background-color: #2a2a2a;
+            border: 1px dashed #ffb703;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info-box span {
+            font-size: 14px;
+            color: #aaa;
+        }
+        .info-box strong {
+            font-size: 18px;
+            color: #ffb703;
+            letter-spacing: 1px;
+        }
+        .copy-btn {
+            background-color: #ffb703;
+            color: #000;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:active {
+            background-color: #e0a000;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- हेडर -->
+    <div class="header">
+        <a href="my-matches.html" class="back-btn">⬅</a>
+        <h2>ROOM DETAILS</h2>
+    </div>
+
+    <div class="card">
+        <div class="match-name">SOLO BERMUDA BATTLE</div>
+
+        <!-- रूम आईडी -->
+        <div class="info-box">
+            <div>
+                <span>ROOM ID:</span>
+                <strong id="roomId">5839201</strong>
+            </div>
+            <button class="copy-btn" onclick="copyText('roomId')">COPY</button>
+        </div>
+
+        <!-- पासवर्ड -->
+        <div class="info-box">
+            <div>
+                <span>PASSWORD:</span>
+                <strong id="roomPass">1234</strong>
+            </div>
+            <button class="copy-btn" onclick="copyText('roomPass')">COPY</button>
+        </div>
+
+        <div class="note">
+            ⚠️ <strong>महत्वपूर्ण सूचना:</strong> रूम आईडी और पासवर्ड किसी के साथ शेयर न करें। मैच शुरू होने से 5 मिनट पहले रूम में एंटर हो जाएं।
+        </div>
+    </div>
+
+    <script>
+        function copyText(elementId) {
+            let text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text);
+            alert("कॉपी हो गया: " + text);
+        }
+    </script>
+
+</body>
+  </html>
+  
